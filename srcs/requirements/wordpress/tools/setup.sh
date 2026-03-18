@@ -27,6 +27,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
     # Zweiten User erstellen (42 Anforderung!)
     wp user create \
         "${WP_USER}" "${WP_USER_EMAIL}" \
+        --path=/var/www/html \
         --role=author \
         --user_pass="${WP_USER_PASS}" \
         --allow-root
