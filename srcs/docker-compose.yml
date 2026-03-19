@@ -1,6 +1,7 @@
 services:
   mariadb:
     build: ./requirements/mariadb
+    image: mariadb:incpetion
     restart: unless-stopped
     env_file: ./requirements/.env
     volumes:
@@ -15,6 +16,7 @@ services:
       start_period: 10s
   wordpress:
     build: ./requirements/wordpress
+    image: wordpress:incpetion
     restart: unless-stopped
     env_file: ./requirements/.env
     depends_on:
@@ -27,6 +29,7 @@ services:
 
   nginx:
     build: ./requirements/nginx
+    image: nginx:incpetion
     restart: unless-stopped
     depends_on:
       - wordpress
